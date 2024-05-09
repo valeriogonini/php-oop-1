@@ -40,28 +40,36 @@ $films[] = $avengers;
 
 <head>
     <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <title>Document</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-3">
-                <?php
-                foreach ($films as $film) {
-                ?>
-                    <p><?php echo $film->title ?> </p>
-                    <p><?php echo $film->vote ?> </p>
-                    <p><?php echo $film->language ?> </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Film</th>
+                <th scope="col">Voto</th>
+                <th scope="col">Lingua</th>
+            </tr>
+        </thead>
+        <?php
+        foreach ($films as $film) {
+        ?>
+            <tbody>
+                <tr>
+                    <th scope="row"><?php echo $film->title ?></th>
+                    <td><?php echo $film->vote ?></td>
+                    <td><?php echo $film->language ?></td>
+                </tr>
 
-                <?php
-                }
-                ?>
-            </div>
-        </div>
-    </div>
+            </tbody>
+        <?php
+        }
+        ?>
+    </table>
 </body>
 
 </html>
